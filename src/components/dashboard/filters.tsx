@@ -10,13 +10,17 @@ import {
 } from "@/components/ui/select";
 
 export function Filters() {
-  const { filterType, setFilterType, filterStatus, setFilterStatus } =
-    useProperties();
+  const { state, dispatch } = useProperties();
 
   return (
-    <div className="flex space-x-2">
-      <Select value={filterType} onValueChange={setFilterType}>
-        <SelectTrigger className="w-[180px]">
+    <div className="flex flex-wrap justify-end items-center space-x-2 xxs:space-y-2 xs:space-y-0 ">
+      <Select
+        value={state.filterType}
+        onValueChange={(value) =>
+          dispatch({ type: "SET_FILTER_TYPE", payload: value })
+        }
+      >
+        <SelectTrigger className="xs:w-[140px] md:w-[160px]">
           <SelectValue placeholder="Property Type" />
         </SelectTrigger>
         <SelectContent>
@@ -26,8 +30,13 @@ export function Filters() {
           <SelectItem value="commercial">Commercial</SelectItem>
         </SelectContent>
       </Select>
-      <Select value={filterStatus} onValueChange={setFilterStatus}>
-        <SelectTrigger className="w-[180px]">
+      <Select
+        value={state.filterStatus}
+        onValueChange={(value) =>
+          dispatch({ type: "SET_FILTER_STATUS", payload: value })
+        }
+      >
+        <SelectTrigger className="xs:w-[140px] md:w-[160px]">
           <SelectValue placeholder="Status" />
         </SelectTrigger>
         <SelectContent>

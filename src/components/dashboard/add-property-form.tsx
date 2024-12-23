@@ -42,7 +42,7 @@ const formSchema = z.object({
 
 export default function AddPropertyForm() {
   const [open, setOpen] = useState(false);
-  const { addProperty } = useProperties();
+  const { dispatch } = useProperties();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -61,7 +61,7 @@ export default function AddPropertyForm() {
       price: parseFloat(values.price),
     };
 
-    addProperty(newProperty);
+    dispatch({ type: "ADD_PROPERTY", payload: newProperty });
     setOpen(false);
     form.reset();
   }

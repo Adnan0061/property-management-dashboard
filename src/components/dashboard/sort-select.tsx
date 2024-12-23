@@ -8,14 +8,23 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useProperties } from "@/context/property-context";
+import { SortField, SortOrder } from "@/lib/types";
 
 export function SortSelect() {
-  const { sortField, setSortField, sortOrder, setSortOrder } = useProperties();
+  const { state, dispatch } = useProperties();
+
+  const handleSortFieldChange = (value: SortField) => {
+    dispatch({ type: "SET_SORT_FIELD", payload: value });
+  };
+
+  const handleSortOrderChange = (value: SortOrder) => {
+    dispatch({ type: "SET_SORT_ORDER", payload: value });
+  };
 
   return (
-    <div className="flex space-x-2">
-      <Select value={sortField} onValueChange={setSortField}>
-        <SelectTrigger className="w-[160px]">
+    <div className="flex flex-wrap justify-end space-x-2 xxs:space-y-2 xs:space-y-0">
+      <Select value={state.sortField} onValueChange={handleSortFieldChange}>
+        <SelectTrigger className="xs:w-[140px] md:w-[160px]">
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent>
@@ -26,8 +35,8 @@ export function SortSelect() {
           <SelectItem value="status">Status</SelectItem>
         </SelectContent>
       </Select>
-      <Select value={sortOrder} onValueChange={setSortOrder}>
-        <SelectTrigger className="w-[120px]">
+      <Select value={state.sortOrder} onValueChange={handleSortOrderChange}>
+        <SelectTrigger className="xs:w-[140px] md:w-[160px]">
           <SelectValue placeholder="Order" />
         </SelectTrigger>
         <SelectContent>

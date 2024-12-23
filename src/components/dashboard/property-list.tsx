@@ -12,19 +12,28 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function PropertyList() {
-  const { filteredProperties, deleteProperty, isLoading, error } =
-    useProperties();
+  const { state, dispatch, filteredProperties } = useProperties();
 
-  if (isLoading) {
+  const deleteProperty = (id: string) => {
+    dispatch({ type: "DELETE_PROPERTY", payload: id });
+  };
+  if (state.isLoading) {
     return <PropertyListSkeleton />;
   }
 
-  if (error) {
+  if (state.error) {
     return (
       <Alert variant="destructive">
         <AlertCircle className="h-4 w-4" />
-        <AlertDescription>{error}</AlertDescription>
+        <AlertDescription>{state.error}</AlertDescription>
       </Alert>
+    );
+  }
+  if (filteredProperties.length === 0) {
+    return (
+      <div className="flex justify-center items-center min-h-40">
+        <p className="text-muted-foreground">No properties found</p>
+      </div>
     );
   }
 
@@ -41,12 +50,16 @@ export default function PropertyList() {
               transition={{ duration: 0.2 }}
             >
               <Card>
-                <CardHeader className="relative h-48 p-0">
+                <CardHeader className="relative h-60 p-0">
                   <Image
                     src={property.imageUrl || "/placeholder.png"}
                     alt={property.address}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover rounded-t-lg"
+                    // loading="lazy"
+                    priority={false}
+                    quality={60}
                   />
                   <Button
                     variant="destructive"

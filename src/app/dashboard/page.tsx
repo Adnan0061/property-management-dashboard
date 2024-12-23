@@ -4,6 +4,8 @@ import StatsCards from "@/components/dashboard/stats-cards";
 import PropertyList from "@/components/dashboard/property-list";
 import { Filters } from "@/components/dashboard/filters";
 import AddPropertyForm from "@/components/dashboard/add-property-form";
+import { SortSelect } from "@/components/dashboard/sort-select";
+import { SearchBar } from "@/components/dashboard/search-bar";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -19,6 +21,8 @@ export default function DashboardPage() {
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold tracking-tight">Properties</h2>
           <div className="flex items-center space-x-2">
+            <SearchBar />
+            <SortSelect />
             <Filters />
             <AddPropertyForm />
           </div>

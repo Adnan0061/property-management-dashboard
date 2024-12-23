@@ -102,6 +102,7 @@ export function PropertyProvider({ children }: { children: React.ReactNode }) {
           setProperties(JSON.parse(stored));
         }
       } catch (err) {
+        console.error(err);
         setError("Failed to load properties");
       } finally {
         setIsLoading(false);

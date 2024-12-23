@@ -14,7 +14,7 @@ export default function Header() {
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Good morning!</h1>
         <p className="text-muted-foreground">
-          Here's an overview of your properties
+          Here&apos;s an overview of your properties
         </p>
       </div>
       <div className="flex items-center space-x-2">

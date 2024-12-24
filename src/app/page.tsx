@@ -20,7 +20,7 @@ export default function DashboardPage() {
       <StatsCards />
       {/* provider is here not in the layout intentionally, I can assure that it is optimised here then in layout */}
       <PropertyProvider>
-        <div className="flex flex-col space-y-4">
+        <div className="col-span-3 flex flex-col space-y-4">
           <div className="flex flex-wrap items-center justify-between space-x-2">
             <h2 className="text-3xl font-bold tracking-tight">Properties</h2>
             <div className="flex flex-wrap justify-end items-center space-x-2 space-y-2">

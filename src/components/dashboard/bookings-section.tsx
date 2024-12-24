@@ -46,13 +46,13 @@ export default function BookingsSection() {
             4
           </span>
         </h2>
-        <div className="space-y-2">
+        <div className="space-y-2 grid grid-cols-2 gap-4">
           {propertiesData
             .filter((booking) => Number(booking.id) <= 4)
             .map((booking) => (
               <div
                 key={booking.id}
-                className="flex items-center justify-between p-4 border rounded-lg"
+                className="xxs:col-span-2 sm:col-span-1 lg:col-span-2 flex items-center justify-between p-4 border rounded-lg"
               >
                 <div className="flex items-center gap-3">
                   <div className="relative h-12 w-12 bg-gray-200 rounded-lg">

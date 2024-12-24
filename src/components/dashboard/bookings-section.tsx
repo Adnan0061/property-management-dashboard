@@ -7,6 +7,7 @@ import Image from "next/image";
 export default function BookingsSection() {
   return (
     <div className="space-y-4">
+      {/* next steps section */}
       <div className="flex flex-col space-y-4">
         <h2 className="text-3xl font-bold tracking-tight">Your next steps</h2>
         <div className="grid grid-cols-2 gap-4">
@@ -30,15 +31,17 @@ export default function BookingsSection() {
             </div>
             <div>
               <h3 className="font-medium">Increase your bookings</h3>
-              <div className="w-24 h-2 mt-2 bg-green-200 rounded-full">
-                <div className="w-1/3 h-full bg-green-500 rounded-full"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-24 h-2 mt-2 bg-green-200 rounded-full">
+                  <div className="w-1/3 h-full bg-green-500 rounded-full"></div>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">2/6</p>
               </div>
-              <p className="text-sm text-muted-foreground mt-1">2/6</p>
             </div>
           </div>
         </div>
       </div>
-
+      {/* bookings section */}
       <div className="space-y-4">
         <h2 className="text-3xl font-bold tracking-tight flex items-center gap-2">
           New bookings

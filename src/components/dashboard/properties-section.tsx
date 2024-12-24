@@ -1,10 +1,10 @@
 import { PropertyProvider } from "@/context/property-context";
-import AddPropertyForm from "./add-property-form";
+import AddPropertyForm from "./properties/add-property-form";
 import React from "react";
-import { Filters } from "./filters";
-import { SearchBar } from "./search-bar";
-import { SortSelect } from "./sort-select";
-import PropertyList from "./property-list";
+import { Filters } from "./properties/filters";
+import { SearchBar } from "./properties/search-bar";
+import { SortSelect } from "./properties/sort-select";
+import PropertyList from "./properties/property-list";
 
 export default function PropertiesSection() {
   return (

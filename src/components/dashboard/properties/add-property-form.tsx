@@ -33,6 +33,7 @@ import { useProperties } from "@/context/property-context";
 
 const formSchema = z.object({
   address: z.string().min(1, "Address is required"),
+  imageUrl: z.string().min(1, "Image Link is required"),
   type: z.enum(["Apartment", "House", "Commercial"]),
   status: z.enum(["Available", "Rented"]),
   price: z.string().min(1, "Price is required"),
@@ -48,6 +49,7 @@ export default function AddPropertyForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       address: "",
+      imageUrl: "",
       type: "Apartment",
       status: "Available",
       price: "",
@@ -85,6 +87,22 @@ export default function AddPropertyForm() {
                   <FormLabel>Address</FormLabel>
                   <FormControl>
                     <Input placeholder="123 Main St" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="imageUrl"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Image Link</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="https://example.com/image.jpg"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

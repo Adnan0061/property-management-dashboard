@@ -15,7 +15,7 @@ export default function Header() {
   const isAnalytics = pathname === "/analytics";
 
   return (
-    <header className="flex items-center justify-between py-4 px-8 border-b">
+    <header className="flex items-center justify-between py-4 xxs:px-4 md:px-8 border-b">
       {/* logo section */}
       <div className="flex items-center justify-between space-x-3">
         <Shell className="w-10 h-10" />
@@ -66,7 +66,7 @@ export default function Header() {
       {/* mobile menu */}
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="ghost" className="md:hidden">
+          <Button variant="ghost" className="md:hidden border ">
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>

@@ -40,7 +40,7 @@ export default function RootLayout({
           {/* header section */}
           <Header />
           {/* main content section */}
-          <main className="flex flex-col flex-grow space-y-6 p-8">
+          <main className="flex flex-col flex-grow space-y-6 xxs:p-4 md:p-8">
             {children}
           </main>
           {/* footer section */}

@@ -55,7 +55,7 @@ export default function PropertyList() {
                     src={property.imageUrl || "/placeholder.png"}
                     alt={property.address}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 16.5vw"
                     className="object-cover rounded-t-lg"
                     // loading="lazy"
                     priority={false}

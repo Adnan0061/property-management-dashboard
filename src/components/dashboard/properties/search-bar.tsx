@@ -12,7 +12,7 @@ export function SearchBar() {
   };
 
   return (
-    <div className="relative xs:w-[140px] md:w-auto mt-2">
+    <div className="relative xxs:w-[120px] xs:w-[140px] md:w-auto mt-2">
       <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
       <Input
         placeholder="Search properties..."

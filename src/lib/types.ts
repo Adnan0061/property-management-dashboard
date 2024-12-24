@@ -17,8 +17,13 @@ export type DashboardStats = {
 };
 
 // Add sorting types
-export type SortField = "price" | "address" | "checkInDate" | "type" | "status";
-export type SortOrder = "asc" | "desc";
+export type SortFieldType =
+  | "price"
+  | "address"
+  | "checkInDate"
+  | "type"
+  | "status";
+export type SortOrderType = "asc" | "desc";
 
 export type PropertyAction =
   | { type: "SET_PROPERTIES"; payload: Property[] }
@@ -27,8 +32,8 @@ export type PropertyAction =
   | { type: "DELETE_PROPERTY"; payload: string }
   | { type: "SET_FILTER_TYPE"; payload: string }
   | { type: "SET_FILTER_STATUS"; payload: string }
-  | { type: "SET_SORT_FIELD"; payload: SortField }
-  | { type: "SET_SORT_ORDER"; payload: SortOrder }
+  | { type: "SET_SORT_FIELD"; payload: SortFieldType }
+  | { type: "SET_SORT_ORDER"; payload: SortOrderType }
   | { type: "SET_SEARCH_QUERY"; payload: string }
   | { type: "SET_CURRENT_PAGE"; payload: number }
   | { type: "SET_LOADING"; payload: boolean }

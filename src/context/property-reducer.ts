@@ -1,12 +1,17 @@
-import { Property, PropertyAction, SortField, SortOrder } from "@/lib/types";
+import {
+  Property,
+  PropertyAction,
+  SortFieldType,
+  SortOrderType,
+} from "@/lib/types";
 import properties from "@/lib/properties.json";
 
 export interface PropertyState {
   properties: Property[];
   filterType: string;
   filterStatus: string;
-  sortField: SortField;
-  sortOrder: SortOrder;
+  sortField: SortFieldType;
+  sortOrder: SortOrderType;
   searchQuery: string;
   currentPage: number;
   isLoading: boolean;
